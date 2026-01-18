@@ -31,7 +31,7 @@ public class BookingController {
         return new BookingDto(booking.getId(), booking.getToken(), booking.getStatus());
     }
 
-    @PostMapping
+    @PostMapping("/{id}/cancel")
     public void cancel(@PathVariable Long id) {
         bookingService.cancelBooking(id, currentUserId());
     }
